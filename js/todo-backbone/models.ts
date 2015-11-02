@@ -12,7 +12,7 @@ module Demo.Todo.BackboneApp {
         timestamp: number;
 
         /**
-         * The displayed text of the todo (also its identifier).
+         * The displayed text of the todo.
          */
         text: string;
 
@@ -38,9 +38,23 @@ module Demo.Todo.BackboneApp {
      * A simple Backbone collection of Todo models stored in localStorage.
      */
     export class TodoList extends Backbone.Collection<Todo> {
+        /**
+         * The type of model this stores, as the class typeof.
+         */
         model: typeof Todo;
+
+        /**
+         * The localStorage plugin's location to store values locally.
+         */
         localStorage: Backbone.LocalStorage;
 
+        /**
+         * Initializes a new instance of the TodoList class.
+         * 
+         * @param stateName   What to store this under in localStorage.
+         * @param models
+         * @param options
+         */
         constructor(stateName: string, models?: Todo[] | Object[], options?: any) {
             this.model = Todo;
             this.localStorage = new Backbone.LocalStorage("todo-backbone-" + stateName);

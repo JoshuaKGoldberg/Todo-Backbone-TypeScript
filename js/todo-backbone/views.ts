@@ -94,7 +94,7 @@ module Demo.Todo.BackboneApp {
          * @param event   The source keyboard event.
          */
         private onInputKeyPress(event: KeyboardEvent): void {
-            if (event.which !== 13 || !this.inputText.val().trim()) {
+            if (event.which !== 13) {
                 return;
             }
 
