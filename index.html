@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>To-do - Backbone</title>
+</head>
+<body>
+    <div id="todoapp">
+        <input id="input-text" placeholder="Insert text here" autofocus>
+        <input id="input-button" type="button" value="Add" />
+        <input id="input-clear" type="button" value="Clear" />
+        <div id="todo-list">
+            <h4>Incomplete</h4>
+            <div id="todos-incomplete"></div>
+            <h4>Completed</h4>
+            <div id="todos-completed"></div>
+        </div>
+    </div>
+
+    <script src="js/lib/jquery-1.11.3.js"></script>
+    <script src="js/lib/underscore-1.8.3.js"></script>
+    <script src="js/lib/backbone-1.2.3.js"></script>
+    <script src="js/lib/backbone-localstorage-1.1.16.js"></script>
+
+    <script type="text/template" id="todo-template">
+        <div id="<%- timestamp %>" class="view">
+            <input class="toggle" type="checkbox" <%- completed ? "checked" : "" %>>
+            <label><%- text %></label>
+        </div>
+    </script>
+
+    <script src="js/todo-backbone/models.js"></script>
+    <script src="js/todo-backbone/views.js"></script>
+    <script src="js/todo-backbone/app.js"></script>
+</body>
+</html>
